@@ -26,6 +26,7 @@ class ChartWrapper extends PureComponent {
       chartOptions,
       legendPosition,
       maintainAspectRatio,
+      aspectRatio,
       delayedAnimation,
     } = this.props;
     let delayed;
@@ -53,6 +54,7 @@ class ChartWrapper extends PureComponent {
     const options = {
       responsive: true,
       maintainAspectRatio,
+      aspectRatio,
       layout: {
         padding: 10,
       },
@@ -95,6 +97,7 @@ ChartWrapper.defaultProps = {
   maintainAspectRatio: true,
   id: Math.random(),
   delayedAnimation: false,
+  aspectRatio: 2,
 };
 
 export default ChartWrapper;

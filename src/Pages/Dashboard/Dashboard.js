@@ -5,6 +5,9 @@ import { managerData, yearLabels, nationalAverageData } from "../../mockData";
 import ChartWrapper from "../../Components/ChartWrapper/ChartWrapper";
 
 const Dashboard = () => {
+  const isMobileDevice = () => {
+    return window.innerWidth < 500;
+  };
   const barData = {
     labels: yearLabels,
     datasets: [
@@ -61,22 +64,6 @@ const Dashboard = () => {
     <div className="container">
       <div className="container__box">
         <div className="charts__container">
-          <div className="charts__container__title">Pie Chart</div>
-          <div className="charts__container__content">
-            <ChartWrapper
-              data={pieData}
-              id="pie-chart"
-              type="pie"
-              showDataLabels={true}
-              legendPosition="bottom"
-              maintainAspectRatio={false}
-              delayedAnimation={true}
-            />
-          </div>
-        </div>
-      </div>
-      <div className="container__box">
-        <div className="charts__container">
           <div className="charts__container__title">Bar Chart</div>
           <div className="charts__container__content">
             <ChartWrapper
@@ -85,12 +72,13 @@ const Dashboard = () => {
               type="bar"
               showDataLabels={true}
               legendPosition="bottom"
-              maintainAspectRatio={true}
               delayedAnimation={true}
+              maintainAspectRatio={!isMobileDevice()}
             />
           </div>
         </div>
       </div>
+
       <div className="container__box">
         <div className="charts__container">
           <div className="charts__container__title">Line Chart</div>
@@ -101,7 +89,41 @@ const Dashboard = () => {
               type="line"
               showDataLabels={true}
               legendPosition="bottom"
-              maintainAspectRatio={true}
+              delayedAnimation={true}
+              maintainAspectRatio={!isMobileDevice()}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="container__box">
+        <div className="charts__container">
+          <div className="charts__container__title">Pie Chart</div>
+          <div className="charts__container__content">
+            <ChartWrapper
+              data={pieData}
+              id="pie-chart"
+              type="pie"
+              showDataLabels={true}
+              legendPosition="bottom"
+              aspectRatio={1.6}
+              delayedAnimation={true}
+              maintainAspectRatio={!isMobileDevice()}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="container__box">
+        <div className="charts__container">
+          <div className="charts__container__title">Polar Area Chart</div>
+          <div className="charts__container__content">
+            <ChartWrapper
+              data={pieData}
+              id="polarArea-chart"
+              type="polarArea"
+              showDataLabels={true}
+              legendPosition="bottom"
+              maintainAspectRatio={!isMobileDevice()}
+              aspectRatio={1.6}
               delayedAnimation={true}
             />
           </div>

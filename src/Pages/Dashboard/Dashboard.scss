@@ -1,12 +1,13 @@
 @import "../../style/mixins";
 .container {
-  width: 100%;
   display: flex;
+  flex: 1;
   padding: 20px;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  @include min-width(sm) {
+  @include min-width(md) {
     flex-direction: row;
   }
 
@@ -15,8 +16,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    width: 100%;
-    height: 220px;
+    margin: 10px;
+    width: calc(100vw - 60px);
+    height: 50vh;
+    min-height: 400px;
     &:not(nth-last-col) {
       margin-bottom: 20px;
     }
@@ -26,10 +29,13 @@
     transition: 0.7s;
     @include min-width(sm) {
       padding: 20px;
-      width: 650px;
+      width: calc(100vw - 120px);
       height: 450px;
       border-radius: 16px;
       background-color: #fff;
+    }
+    @include min-width(md) {
+      width: calc(50vw - 120px);
     }
   }
 }
