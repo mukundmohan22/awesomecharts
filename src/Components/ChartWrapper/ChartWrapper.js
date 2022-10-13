@@ -22,7 +22,7 @@ class ChartWrapper extends PureComponent {
     const {
       data,
       type,
-      showDataLabels = false,
+      showDataLabels,
       chartOptions,
       legendPosition,
       maintainAspectRatio,
