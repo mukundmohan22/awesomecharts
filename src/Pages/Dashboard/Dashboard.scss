@@ -37,6 +37,12 @@
     @include min-width(md) {
       width: calc(50vw - 120px);
     }
+    @include min-width(lg) {
+      height: 550px;
+    }
+    @include min-width(xxlg) {
+      height: 650px;
+    }
   }
 }
 .charts__container {

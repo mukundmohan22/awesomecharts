@@ -12,6 +12,7 @@ $breakpoints: (
   md: 1024px,
   lg: 1200px,
   xlg: 1440px,
+  xxlg: 2200px,
 );
 
 @mixin min-width($breakpoint) {
